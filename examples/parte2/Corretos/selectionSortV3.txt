@@ -1,0 +1,60 @@
+global[
+	Min: int;
+]
+
+
+funcao [
+	selectionSort (vet[]:int,n:int):int
+		[
+			i,j, x:int;
+		]
+		{
+			i=0;
+			enquanto( i<n-1) 
+				[
+				  Min: int;
+				]
+				{ 
+					Min=i;
+					j=i+1;
+					enquanto (j<n)  {
+						se (vet[j] < vet[Min])
+						entao
+							Min=j;
+						fimse;	
+						j=j+1;
+					}
+					x=vet[Min]; vet[Min]=vet[i]; vet[i]=x;
+					i=i+1;
+				}  
+			retorne 1;
+		}
+]
+principal
+	[
+		vet[10]:int;
+		i:int;
+	]
+	{
+		escreva "Digite os valores de um vetor de 10 inteiros ";
+		novalinha;
+		i=0;
+		enquanto (i<10){
+			escreva "Digite o valor do elemento ";
+			escreva i;
+			novalinha;
+			leia vet[i];
+			i=i+1;
+		} 
+		selectionSort(vet, 10);
+		escreva "Vetor ordenado: ";
+		novalinha;
+		i=0;
+		enquanto (i<10) {
+			escreva vet[i];
+			escreva " ";
+			i=i+1;
+		}
+	}
+
+
